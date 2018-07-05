@@ -32,4 +32,10 @@ export class HeroService {
   isNullOrEmpty(id: number|string){
     return id?true:false;
   }
+
+  deleteHero(hero: Hero): Observable<Hero>{
+
+    const id = typeof hero === 'number' ? hero: hero.id;
+
+  }
 }
