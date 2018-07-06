@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import {Hero} from '../model/hero'
+import {Hero, GENDER} from '../model/hero'
 
 const HEROES = [
-  new Hero(11, 'Mr. Nice'),
-  new Hero(12, 'Narco'),
-  new Hero(13, 'Bombasto'),
-  new Hero(14, 'Celeritas'),
-  new Hero(15, 'Magneta'),
-  new Hero(16, 'RubberMan')
+  new Hero(11, 'Mr. Nice', Date.now().toString(), GENDER.MALE),
+  new Hero(12, 'Narco',new Date().toString(), GENDER.MALE),
+  new Hero(13, 'Bombasto', new Date().toString(), GENDER.MALE),
+  new Hero(14, 'Celeritas', new Date().toString(), GENDER.MALE),
+  new Hero(15, 'Magneta', new Date().toString(), GENDER.MALE),
+  new Hero(16, 'RubberMan', new Date().toString(), GENDER.MALE)
 ];
 
 @Injectable({
@@ -33,9 +33,9 @@ export class HeroService {
     return id?true:false;
   }
 
-  deleteHero(hero: Hero): Observable<Hero>{
+  // deleteHero(hero: Hero): <Hero>{
 
-    const id = typeof hero === 'number' ? hero: hero.id;
+  //   const id = typeof hero === 'number' ? hero: hero.id;
 
-  }
+  // }
 }
